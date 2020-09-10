@@ -6,21 +6,22 @@ import TabThree from "./Tabs/TabThree";
 export default function TabScreen() {
   return (
     <Container>
-      <Header />
-      <Body>
+      <Header>
+        <Body>
         <Title style={{ color: "black" }}>News App</Title>
-        <Tabs>
-          <Tab heading="Tab1">
-            <TabOne />
-          </Tab>
-          <Tab heading="Tab2">
-            <TabTwo />
-          </Tab>
-          <Tab heading="Tab3">
-            <TabThree />
-          </Tab>
-        </Tabs>
-      </Body>
+        </Body>
+      </Header>
+      <Tabs>
+        <Tab heading="Tab1">
+          <TabOne />
+        </Tab>
+        <Tab heading="Tab2">
+          <TabTwo />
+        </Tab>
+        <Tab heading="Tab3">
+          <TabThree />
+        </Tab>
+      </Tabs>
     </Container>
   );
 }
