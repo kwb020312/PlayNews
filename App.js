@@ -27,7 +27,7 @@ export default function App() {
       </View>
     );
   } else {
-    return <Text>Now Loading...!</Text>;
+    return <Text></Text>;
   }
 }
 

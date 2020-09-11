@@ -27,6 +27,12 @@ function DataItem({ article }) {
         <Text note numberOfLines={2}>
           {article.description}
         </Text>
+        <View style={{ flex: 1, flexDirection: "row", marginTop: 10 }}>
+          <Text note>{article.source.name}</Text>
+          <Text note>
+            {moment(article.publishedAt || moment.now).fromNow()}
+          </Text>
+        </View>
       </Body>
       <Right>
         <Button transparent>
