@@ -3,19 +3,31 @@ import { View, Text, ActivityIndicator } from "react-native";
 import { Container, Content, List } from "native-base";
 import { getArticles } from "../../api/news";
 import DataItem from "../DataItem";
+import ModalView from "../ModalView";
+
 export default function TabOne() {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
+  const [modalView, setModalView] = useState(false);
+  const [modalArticleData, setModalArticleData] = useState({});
+
   useEffect(() => {
-    // 상단에 초기화를 useState 로 초기화 처리가 되어있기 때문에 이건 필요 없음.
-    // setIsLoading(true);
-    
     async function get_articles() {
       setArticles(await getArticles());
       setIsLoading(false);
     }
     get_articles();
   }, []);
+
+  const viewModal = (articleData) => {
+    setModalView(true);
+    setModalArticleData(articleData);
+  };
+
+  const handleModalClose = () => {
+    setModalView(false);
+    setModalArticleData({});
+  };
 
   const pageView = isLoading ? (
     <View>
@@ -26,7 +38,7 @@ export default function TabOne() {
     <List
       dataArray={articles}
       renderRow={(article) => {
-        return <DataItem article={article} />;
+        return <DataItem article={article} onPress={viewModal} />;
       }}
     />
   );
@@ -34,6 +46,11 @@ export default function TabOne() {
   return (
     <Container>
       <Content>{pageView}</Content>
+      <ModalView
+        showModal={modalView}
+        articleData={modalArticleData}
+        onClose={handleModalClose}
+      />
     </Container>
   );
 }

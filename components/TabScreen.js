@@ -8,17 +8,17 @@ export default function TabScreen() {
     <Container>
       <Header>
         <Body>
-        <Title style={{ color: "black" }}>News App</Title>
+          <Title style={{ color: "black" }}>News App</Title>
         </Body>
       </Header>
       <Tabs>
-        <Tab heading="Tab1">
+        <Tab heading="General ISSUE">
           <TabOne />
         </Tab>
-        <Tab heading="Tab2">
+        <Tab heading="Health ISSUE">
           <TabTwo />
         </Tab>
-        <Tab heading="Tab3">
+        <Tab heading="E.T ISSUE">
           <TabThree />
         </Tab>
       </Tabs>

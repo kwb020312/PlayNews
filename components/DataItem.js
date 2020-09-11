@@ -1,4 +1,6 @@
 import React from "react";
+import { View } from "react-native";
+import moment from "moment";
 import {
   ListItem,
   Thumbnail,
@@ -9,7 +11,14 @@ import {
   Button,
 } from "native-base";
 
-function DataItem({ article }) {
+function DataItem({ article, onPress }) {
+  const viewPress = () => {
+    onPress({
+      url: article.url,
+      title: article.title,
+    });
+  };
+
   return (
     <ListItem thumbnail>
       <Left>
@@ -35,7 +44,7 @@ function DataItem({ article }) {
         </View>
       </Body>
       <Right>
-        <Button transparent>
+        <Button transparent onPress={viewPress}>
           <Text>보기</Text>
         </Button>
       </Right>

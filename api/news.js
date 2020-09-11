@@ -11,10 +11,30 @@ export const getArticles = async () => {
     const articles = await axios.get(
       `${article_url}?country=${country_code}&category=${category}&apiKey=${__api_key}`
     );
-    alert(articles.data.articles);
     return articles.data.articles;
   } catch (error) {
-    alert("오류");
+    throw error;
+  }
+};
+
+export const getHealth = async () => {
+  try {
+    const articles = await axios.get(
+      `${article_url}?country=${country_code}&category=health&apiKey=${__api_key}`
+    );
+    return articles.data.articles;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getEntertainment = async () => {
+  try {
+    const articles = await axios.get(
+      `${article_url}?country=${country_code}&category=entertainment&apiKey=${__api_key}`
+    );
+    return articles.data.articles;
+  } catch (error) {
     throw error;
   }
 };

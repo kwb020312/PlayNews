@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add axios
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-webview
 
 PATH: 
-  C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\kimwoobin\AppData\Local\Microsoft\WindowsApps;C:\Users\kimwoobin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\kimwoobin\AppData\Roaming\npm;C:\Users\kimwoobin\AppData\Local\Android\Sdk\platform-tools;C:\Users\kimwoobin\AppData\Local\Yarn\bin
+  C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\kimwoobin\AppData\Local\Microsoft\WindowsApps;C:\Users\kimwoobin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\kimwoobin\AppData\Roaming\npm;C:\Users\kimwoobin\AppData\Local\Android\Sdk\platform-tools;C:\Users\kimwoobin\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.22.5
@@ -14,7 +14,15 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\kimwoobin\Desktop\self\play_news\node_modules\@babel\compat-data\node_modules\.bin'
+  SyntaxError: Unknown token: { line: 2435, col: 1, type: 'INVALID', value: undefined } 2435:1 in C:\Users\kimwoobin\Desktop\self\play_news\yarn.lock
+      at Parser.unexpected (C:\Program Files (x86)\Yarn\lib\cli.js:63442:11)
+      at Parser.parse (C:\Program Files (x86)\Yarn\lib\cli.js:63573:14)
+      at parse (C:\Program Files (x86)\Yarn\lib\cli.js:63647:21)
+      at module.exports.exports.default (C:\Program Files (x86)\Yarn\lib\cli.js:63209:96)
+      at Function.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:3064:63)
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -28,9 +36,11 @@ npm manifest:
     },
     "dependencies": {
       "@expo/vector-icons": "10.2.1",
-      "expo": "~38.0.8",
+      "axios": "^0.20.0",
+      "expo": "^38.0.10",
       "expo-font": "~8.2.1",
       "expo-status-bar": "^1.0.2",
+      "moment": "2.27.0",
       "native-base": "2.13.14",
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
@@ -1578,6 +1588,13 @@ Lockfile:
     integrity sha512-XWX3OX8Onv97LMk/ftVyBibpGwY5a8SmuxZPzeOxqmuEqUCOM9ZE+uIaD1VNJ5QnvU2UQusvmKbuM1FR8QWGfQ==
     dependencies:
       array-filter "^1.0.0"
+  axios@^0.20.0:
+    version "0.20.0"
+    resolved "http://registry.playauto.org:9898/repository/npm-all/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
+  
+    integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+    dependencies:
+      follow-redirects "^1.10.0"
   
   babel-plugin-dynamic-import-node@^2.3.3:
     version "2.3.3"
@@ -2581,9 +2598,9 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.0.2.tgz#2441a77c56be31597898337b0d086981f2adefd8"
     integrity sha512-5313u744GcLzCadxIPXyTkYw77++UXv1dXCuhYDxDbtsEf93iMra7WSvzyE8a7mRQLIIPRuGnBOdrL/V1C7EOQ==
   
-  expo@~38.0.8:
+  expo@^38.0.10:
     version "38.0.10"
-    resolved "https://registry.yarnpkg.com/expo/-/expo-38.0.10.tgz#c3938f22ee56985289ca7532f94263c6f7fc0989"
+    resolved "http://registry.playauto.org:9898/repository/npm-all/expo/-/expo-38.0.10.tgz#c3938f22ee56985289ca7532f94263c6f7fc0989"
     integrity sha512-tgloRuZs3uyMEPDRo4SV6ZmCQSG7HcCvT0Ryf0tp89pnAyAS4knEX3ZfzGcK0X4njQfZ02uvBJ4dCEMxWb9h0Q==
     dependencies:
       "@babel/runtime" "^7.1.2"
@@ -2818,6 +2835,12 @@ Lockfile:
     dependencies:
       locate-path "^5.0.0"
       path-exists "^4.0.0"
+  
+  follow-redirects@^1.10.0:
+    version "1.13.0"
+    resolved "http://registry.playauto.org:9898/repository/npm-all/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
+  >>>>>>> e0310aea23d73d82272c281eaedec5168c9f645e
+    integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
   
   fontfaceobserver@^2.1.0:
     version "2.1.0"
@@ -4068,6 +4091,11 @@ Lockfile:
     integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
     dependencies:
       minimist "^1.2.5"
+  
+  moment@2.27.0:
+    version "2.27.0"
+    resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+    integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
   
   ms@2.0.0:
     version "2.0.0"
