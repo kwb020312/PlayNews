@@ -7,7 +7,9 @@ export default function TabOne() {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    setIsLoading(true);
+    // 상단에 초기화를 useState 로 초기화 처리가 되어있기 때문에 이건 필요 없음.
+    // setIsLoading(true);
+    
     async function get_articles() {
       setArticles(await getArticles());
       setIsLoading(false);
