@@ -24,6 +24,7 @@ const reducer = (state = initialState, action) => {
     case "GET_DATAS":
       return {
         ...state,
+        isLoading: true,
       };
     case "TAKE_DATAS":
       return {
