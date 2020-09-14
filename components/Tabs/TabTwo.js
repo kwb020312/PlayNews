@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getHealth } from "../../api/news";
+import { getArticles } from "../../api/news";
 import { View, Text, ActivityIndicator } from "react-native";
 import { Container, Content, List } from "native-base";
 import DataItem from "../DataItem";
@@ -12,11 +12,11 @@ export default function TabTwo() {
   const [modalArticleData, setModalArticleData] = useState({});
 
   useEffect(() => {
-    const get_Health = async () => {
-      setArticles(await getHealth());
+    const get_data = async () => {
+      setArticles(await getArticles('health'));
       setIsLoading(false);
     };
-    get_Health();
+    get_data();
   }, []);
 
   const viewModal = (articleData) => {

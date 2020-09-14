@@ -13,7 +13,7 @@ export default function TabOne() {
 
   useEffect(() => {
     async function get_articles() {
-      setArticles(await getArticles());
+      setArticles(await getArticles('general'));
       setIsLoading(false);
     }
     get_articles();
