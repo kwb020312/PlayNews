@@ -12,6 +12,7 @@ import {
 } from "native-base";
 
 function DataItem({ article, onPress }) {
+  // useDispatch 사용해서 스토어에 url title 전달
   const viewPress = () => {
     onPress({
       url: article.url,
