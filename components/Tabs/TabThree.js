@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { getArticles } from "../../api/news";
 import { View, Text, ActivityIndicator } from "react-native";
 import { Container, Content, List } from "native-base";
 import DataItem from "../DataItem";
 import ModalView from "../ModalView";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function TabThree() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [articles, setArticles] = useState([]);
   const [modalView, setModalView] = useState(false);
   const [modalArticleData, setModalArticleData] = useState({});
 
-  useEffect(() => {
-    const get_data = async () => {
-      setArticles(await getArticles('entertainment'));
-      setIsLoading(false);
+  const dispatch = useDispatch();
+  const { isLoading, articles } = useSelector((state) => {
+    return {
+      isLoading: state.isLoading,
+      articles: state.entertainment,
     };
-    get_data();
+  });
+
+  useEffect(() => {
+    dispatch({ type: "GET_DATAS", category: "entertainment" });
   }, []);
 
   const viewModal = (articleData) => {

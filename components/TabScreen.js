@@ -3,6 +3,7 @@ import { Body, Container, Header, Tab, Tabs, Title } from "native-base";
 import TabOne from "./Tabs/TapOne";
 import TabTwo from "./Tabs/TabTwo";
 import TabThree from "./Tabs/TabThree";
+
 export default function TabScreen() {
   return (
     <Container>
@@ -15,6 +16,7 @@ export default function TabScreen() {
         <Tab heading="General ISSUE">
           <TabOne />
         </Tab>
+
         <Tab heading="Health ISSUE">
           <TabTwo />
         </Tab>

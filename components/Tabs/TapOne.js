@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, ActivityIndicator } from "react-native";
 import { Container, Content, List } from "native-base";
-import { getArticles } from "../../api/news";
 import DataItem from "../DataItem";
 import ModalView from "../ModalView";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function TabOne() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [articles, setArticles] = useState([]);
   const [modalView, setModalView] = useState(false);
   const [modalArticleData, setModalArticleData] = useState({});
 
+  const dispatch = useDispatch();
+  const { isLoading, articles } = useSelector((state) => {
+    return {
+      isLoading: state.isLoading,
+      articles: state.general,
+    };
+  });
+
   useEffect(() => {
-    async function get_articles() {
-      setArticles(await getArticles('general'));
-      setIsLoading(false);
-    }
-    get_articles();
+    dispatch({ type: "GET_DATAS", category: "general" });
   }, []);
 
   const viewModal = (articleData) => {
