@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getEntertainment } from "../../api/news";
+import { getArticles } from "../../api/news";
 import { View, Text, ActivityIndicator } from "react-native";
 import { Container, Content, List } from "native-base";
 import DataItem from "../DataItem";
@@ -13,7 +13,7 @@ export default function TabThree() {
 
   useEffect(() => {
     const get_data = async () => {
-      setArticles(await getEntertainment());
+      setArticles(await getArticles('entertainment'));
       setIsLoading(false);
     };
     get_data();
