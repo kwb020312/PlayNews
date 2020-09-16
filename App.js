@@ -5,6 +5,7 @@ import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Login from "./pages/Login";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,9 +24,7 @@ export default function App() {
   if (isLoading === false) {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <TabScreen />
-        </View>
+        <Login />
       </Provider>
     );
   } else {
