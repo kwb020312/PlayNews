@@ -19,7 +19,7 @@ export default function TabTwo() {
 
   useEffect(() => {
     dispatch({ type: "GET_DATAS", category: "health" });
-  }, []);
+  }, [dispatch]);
 
   const viewModal = (articleData) => {
     setModalView(true);
