@@ -19,7 +19,7 @@ export default function TabThree() {
 
   useEffect(() => {
     dispatch({ type: "GET_DATAS", category: "entertainment" });
-  }, []);
+  }, [dispatch]);
 
   const viewModal = (articleData) => {
     setModalView(true);

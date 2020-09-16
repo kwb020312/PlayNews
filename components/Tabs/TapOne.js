@@ -19,7 +19,7 @@ export default function TabOne() {
 
   useEffect(() => {
     dispatch({ type: "GET_DATAS", category: "general" });
-  }, []);
+  }, [dispatch]);
 
   const viewModal = (articleData) => {
     setModalView(true);
