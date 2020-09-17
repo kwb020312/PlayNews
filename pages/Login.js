@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { getUsers } from "../api/users";
+import { Actions } from "react-native-router-flux";
 
 function Login() {
   const [isClicked, setIsClicked] = useState(false);
@@ -32,6 +33,10 @@ function Login() {
         alert("성공 정보 :" + JSON.stringify(user));
       }
     }
+  };
+
+  const moveSignup = () => {
+    Actions.register();
   };
   return (
     <>
@@ -92,6 +97,12 @@ function Login() {
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.bottomText}>
+        <Text>Don't have account yet?</Text>
+        <TouchableOpacity onPress={moveSignup}>
+          <Text style={{ paddingLeft: 10 }}>SignUp</Text>
+        </TouchableOpacity>
+      </View>
     </>
   );
 }
@@ -129,6 +140,12 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#ffffff",
     textAlign: "center",
+  },
+  bottomText: {
+    flexGrow: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
