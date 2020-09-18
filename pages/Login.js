@@ -32,7 +32,10 @@ function Login() {
         alert("Failed");
       } else {
         Alert.alert("성공 정보 :" + JSON.stringify(user), "", [
-          { text: "Go Today News!", onPress: () => Actions.newsList() },
+          {
+            text: "GO Today News!",
+            onPress: () => Actions.newsList(),
+          },
         ]);
       }
     }
