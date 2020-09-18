@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { getUsers } from "../api/users";
 import { Actions } from "react-native-router-flux";
@@ -30,7 +31,12 @@ function Login() {
       if (!user.length) {
         alert("Failed");
       } else {
-        alert("성공 정보 :" + JSON.stringify(user));
+        Alert.alert("성공 정보 :" + JSON.stringify(user), "", [
+          {
+            text: "GO Today News!",
+            onPress: () => Actions.newsList(),
+          },
+        ]);
       }
     }
   };
